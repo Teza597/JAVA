@@ -1,0 +1,27 @@
+import java.util.Arrays;
+public class FlipMatrix {
+public static void main(String[] args) {
+int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12},
+{13, 14, 15, 16}};
+int rows = matrix.length;
+int cols = matrix[0].length;
+System.out.println("Original Matrix:");
+for (int[] row : matrix) {
+System.out.println(Arrays.toString(row));
+}
+int[] tempRow = matrix[0];
+matrix[0] = matrix[rows - 1];
+matrix[rows - 1] = tempRow;
+for (int i = 0; i < rows; i++) {
+int tempColElement = matrix[i][0];
+matrix[i][0] = matrix[i][cols - 1];
+matrix[i][cols - 1] = tempColElement;
+}
+System.out.println("\nMatrix after flipping first and last
+rows and columns:");
+for (int[] row : matrix) {
+System.out.println(Arrays.toString(row));
+}
+}
+}
+
